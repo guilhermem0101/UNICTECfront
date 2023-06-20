@@ -6,10 +6,10 @@ import { UserCreateComponent } from './alunos/user-create/user-create.component'
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch: 'full' }, // Rota padrão
-  { path: 'users', component: UserListComponent }, // Rota para listagem de usuários
-  { path: 'users/create', component: UserCreateComponent }, // Rota para cadastro de usuário
-  { path: 'users/edit/:id', component: UserEditComponent } // Rota para edição de usuário com parâmetro ID
+  { path: '', redirectTo: '/alunos', pathMatch: 'full' }, // Rota padrão
+  { path: 'alunos', component: UserListComponent }, // Rota para listagem de usuários
+  { path: 'alunos/cadastro', component: UserCreateComponent }, // Rota para cadastro de usuário
+  { path: 'alunos/edit/:id', component: UserEditComponent } // Rota para edição de usuário com parâmetro ID
 ];
 
 @NgModule({

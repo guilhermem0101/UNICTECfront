@@ -10,7 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +28,17 @@ import { MatTableModule } from '@angular/material/table';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule, 
+    MatInputModule, 
+    ReactiveFormsModule, 
+    NgIf,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule, 
+    MatSelectModule,
+    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

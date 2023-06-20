@@ -1,1 +1,86 @@
-<p>user-create works!</p>
+<!-- <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>CPF</mat-label>
+    <input matInput>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Data de nascimento</mat-label>
+    <input matInput>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Genero</mat-label>
+    <mat-select>
+        <mat-option value="one">Masculino</mat-option>
+        <mat-option value="two">Feminino</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>email</mat-label>
+    <input matInput>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>cep</mat-label>
+    <input matInput>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>curso</mat-label>
+    <input matInput>
+</mat-form-field> -->
+
+
+<form [formGroup]="formulario" (ngSubmit)="create()">
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput formControlName="dataNascimento">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Gênero</mat-label>
+        <mat-select formControlName="genero">
+            <mat-option value="masculino">Masculino</mat-option>
+            <mat-option value="feminino">Feminino</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>CEP</mat-label>
+        <input matInput formControlName="cep">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Curso</mat-label>
+        <input matInput formControlName="curso">
+    </mat-form-field>
+
+
+
+    <button mat-raised-button color="primary" type="submit">Criar</button>
+</form>
+
+
+<!-- <mat-form-field>
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+</mat-form-field> -->
+
+
