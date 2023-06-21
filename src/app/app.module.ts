@@ -15,14 +15,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { GradeCurricularComponent } from './funcionalidades/grade-curricular/grade-curricular.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NotasComponent } from './funcionalidades/notas/notas.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     UserCreateComponent,
     UserEditComponent,
-    SidebarComponent
+    SidebarComponent,
+    GradeCurricularComponent,
+    NotasComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule, 
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatTabsModule
 
   ],
   providers: [],
