@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { FuncionalidadesService } from 'src/app/service/funcionalidades.service';
 
 @Component({
@@ -7,13 +8,24 @@ import { FuncionalidadesService } from 'src/app/service/funcionalidades.service'
   styleUrls: ['./notas.component.css']
 })
 export class NotasComponent {
+  formulario: FormGroup;
+  constructor(private service: FuncionalidadesService) {
 
-  constructor(private service: FuncionalidadesService) { }
+    this.formulario = new FormGroup({
+      curso: new FormControl(''),
 
+    });
+   }
+  listaCuros!: any[]
+  listaDisciplinas!: any[]
 
   ngOnInit() {
     // Chame o método para obter a média do aluno
     this.getMediaPorAluno('Thiago Miura');
+
+    // this.service.getCursos().subscribe((cursos: any[]) => {
+    //   this.listaCuros = cursos;
+    // });
   }
 
   getMediaPorAluno(nomeAluno: string) {
@@ -27,5 +39,21 @@ export class NotasComponent {
       }
     );
   }
+
+
+
+  create() {
+    const formData = this.formulario.value;
+
+    this.service.getDisciplinas(formData.curso).subscribe((disc: any[]) => {
+      this.listaDisciplinas = disc;
+    });
+
+    console.log(this.listaDisciplinas);
+  }
+
+
+
+  displayedColumns: string[] = ['nome_curso', 'cod_curso'];
 
 }

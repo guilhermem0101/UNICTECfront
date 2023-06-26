@@ -15,9 +15,35 @@ export class FuncionalidadesService {
     return this.http.get<any[]>(`${this.apiUrl}${'/grade'}`);
   }
 
-  getMediaByAluno(nomeAluno:string): Observable<any[]> {
+
+  getCursos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}${'/cursos'}`);
+  }
+
+  getDisciplinas(cod_curso: string): Observable<any[]> {
+    
+    const params = new HttpParams().set('cod_curso', cod_curso);
+    return this.http.get<any[]>(`${this.apiUrl}${'/disciplinas'}`, { params });
+  }
+
+  getNotasByDisciplina(cod_disciplina: string): Observable<any[]>{
+    const params = new HttpParams().set('cod_disciplina', cod_disciplina);
+    return this.http.get<any[]>(`${this.apiUrl}${'/notas-alunos'}`, { params });
+  }
+
+  getMediasByDisciplina(cod_disciplina: string): Observable<any[]> {
+    const params = new HttpParams().set('cod_disciplina', cod_disciplina);
+    return this.http.get<any[]>(`${this.apiUrl}${'/meidas-alunos'}`, { params });
+  }
+
+
+
+
+  getMediaByAluno(nomeAluno: string): Observable<any[]> {
 
     const params = new HttpParams().set('nome', nomeAluno);
     return this.http.get<any[]>(`${this.apiUrl}${'/meidas-alunos'}`, { params });
   }
+
+  
 }

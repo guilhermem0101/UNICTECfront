@@ -19,7 +19,25 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { GradeCurricularComponent } from './funcionalidades/grade-curricular/grade-curricular.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { NotasComponent } from './funcionalidades/notas/notas.component';
+import { NotasComponent } from './funcionalidades/notas-curso/notas.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { ListaCursosComponent } from './funcionalidades/lista-cursos/lista-cursos.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ListaDiscpComponent } from './funcionalidades/lista-discp/lista-discp.component';
+import { RdsComponent } from './funcionalidades/notas-curso/rds/rds.component';
+import { SecComponent } from './funcionalidades/notas-curso/sec/sec.component';
+import { AdsComponent } from './funcionalidades/notas-curso/ads/ads.component';
+import { MbiComponent } from './funcionalidades/notas-curso/mbi/mbi.component';
+import { GdtiComponent } from './funcionalidades/notas-curso/gdti/gdti.component';
+
+
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,14 +46,20 @@ import { NotasComponent } from './funcionalidades/notas/notas.component';
     UserEditComponent,
     SidebarComponent,
     GradeCurricularComponent,
-    NotasComponent
+    NotasComponent,
+    ListaCursosComponent,
+    ListaDiscpComponent,
+    RdsComponent,
+    SecComponent,
+    AdsComponent,
+    MbiComponent,
+    GdtiComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule, 
-    MatInputModule, 
+    FormsModule,     
     ReactiveFormsModule, 
     NgIf,
     BrowserAnimationsModule,
@@ -45,7 +69,10 @@ import { NotasComponent } from './funcionalidades/notas/notas.component';
     MatSelectModule,
     MatButtonModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
   ],
   providers: [],

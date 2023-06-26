@@ -9,32 +9,43 @@ import { AlunosServiceService } from 'src/app/service/alunos-service.service';
 })
 export class UserCreateComponent {
   formulario: FormGroup;
+  listaCep!:any[]
+  dataNascimento!:any
+  selectedDate!: Date;
+
+  NgOnInit(){
+
+  }
 
   constructor(private userService: AlunosServiceService) {
     this.formulario = new FormGroup({
       nome: new FormControl(''),
       cpf: new FormControl(''),
-      dataNascimento: new FormControl(''),
+      // dataNascimento: this.selectedDate,
       genero: new FormControl(''),
-      email: new FormControl(''),
-      cep: new FormControl(''),
+      email: new FormControl(''),      
       curso: new FormControl(''),
+      nota_redacao: new FormControl(''),
+      acertos_vestibular: new FormControl(''),
+      
       
     });
   }
 
   create() {
+    this.dataNascimento =this.selectedDate.toISOString()
+    console.log(this.selectedDate)
     const formData = this.formulario.value;
-    formData.dataNascimento = this.formatarData(formData.dataNascimento); // Converte para formato de data
+    
     formData.cpf = formData.cpf.toString(); // Converte para string
 
-    this.userService.createUser(formData).subscribe(
+    this.userService.createUser(formData, this.dataNascimento).subscribe(
       response => {
-        console.log('Usuário criado com sucesso:', response);
+        alert('Usuário criado com sucesso:');
         // Aqui você pode fazer qualquer ação adicional após a criação do usuário
       },
       error => {
-        console.error('Erro ao criar usuário:', error);
+        alert('Erro ao criar usuário:');
         // Aqui você pode tratar o erro de acordo com sua necessidade
       }
     );

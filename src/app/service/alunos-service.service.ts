@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Data } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +15,9 @@ export class AlunosServiceService {
     return this.http.get<any[]>(`${this.apiUrl}${'/ler'}`);
   }
 
-  createUser(user: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}${'/cadastrar'}`, user);
+  createUser(user: any,d_nasc:string): Observable<any> {
+    const params = new HttpParams().set('d_nasc', d_nasc);
+    return this.http.post<any>(`${this.apiUrl}${'/cadastrar'}`, user, { params });
   }
 
   updateUser(user: any): Observable<any> {
