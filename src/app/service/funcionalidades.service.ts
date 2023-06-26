@@ -37,6 +37,13 @@ export class FuncionalidadesService {
     return this.http.get<any[]>(`${this.apiUrl}${'/notas-alunos'}`, { params });
   }
 
+  getNotasByAluno(nome_aluno: string): Observable<any[]> {
+    const params = new HttpParams().set('nome_aluno', nome_aluno);
+    return this.http.get<any[]>(`${this.apiUrl}${'/notasbyalunos'}`, { params });
+  }
+
+
+
   getMediasByDisciplina(cod_disciplina: string): Observable<any[]> {
     const params = new HttpParams().set('cod_disciplina', cod_disciplina);
     return this.http.get<any[]>(`${this.apiUrl}${'/meidas-alunos'}`, { params });

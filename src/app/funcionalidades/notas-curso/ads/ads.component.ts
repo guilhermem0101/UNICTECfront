@@ -11,12 +11,16 @@ export class AdsComponent {
   formulario: FormGroup;
   lista!:any[]
   listaMedia!:any[]
+  listaByaluno!: any[]
+  listaMedias!: any[]
   constructor(private service: FuncionalidadesService) {
 
     this.formulario = new FormGroup({
       disciplina: new FormControl(''),
-
+      nome_aluno: new FormControl(''),
     });
+
+    
   }
 
   create() {
@@ -30,10 +34,20 @@ export class AdsComponent {
       this.listaMedia = disc;
     });
 
+    this.service.getNotasByAluno(formData.nome_aluno).subscribe((disc: any[]) => {
+      this.listaByaluno = disc;
+    });
+
+    // this.service.getMediaByAluno(formData.nome_aluno).subscribe((disc: any[]) => {
+    //   this.listaMedias = disc;
+    // });
+
 
     
   }
 
   displayedColumns: string[] = ['nome_aluno', 'n_prova', 'nota_tirada'];
   displayedColumnsM: string[] = ['nome_aluno', 'media'];
+  displayedColumnsMa: string[] = ['nome_disciplina', 'n_prova', 'nota_tirada'];
+  displayedColumnsMam: string[] = ['nome_disciplina', 'media'];
 }
