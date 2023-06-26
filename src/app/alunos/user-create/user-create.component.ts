@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AlunosServiceService } from 'src/app/service/alunos-service.service';
-
+import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-user-create',
   templateUrl: './user-create.component.html',
@@ -10,7 +10,7 @@ import { AlunosServiceService } from 'src/app/service/alunos-service.service';
 export class UserCreateComponent {
   formulario: FormGroup;
   listaCep!:any[]
-  dataNascimento!:any
+  
   selectedDate!: Date;
 
   NgOnInit(){
@@ -21,7 +21,7 @@ export class UserCreateComponent {
     this.formulario = new FormGroup({
       nome: new FormControl(''),
       cpf: new FormControl(''),
-      // dataNascimento: this.selectedDate,
+      dataNascimento: new FormControl(''),
       genero: new FormControl(''),
       email: new FormControl(''),      
       curso: new FormControl(''),
@@ -33,13 +33,13 @@ export class UserCreateComponent {
   }
 
   create() {
-    this.dataNascimento =this.selectedDate.toISOString()
-    console.log(this.selectedDate)
+    //this.dataNascimento =this.selectedDate.toISOString()
+    
     const formData = this.formulario.value;
     
     formData.cpf = formData.cpf.toString(); // Converte para string
-
-    this.userService.createUser(formData, this.dataNascimento).subscribe(
+    // formData.dataNascimento = this.formatarData2(formData.dataNascimento)
+    this.userService.createUser(formData).subscribe(
       response => {
         alert('Usuário criado com sucesso:');
         // Aqui você pode fazer qualquer ação adicional após a criação do usuário
@@ -51,6 +51,10 @@ export class UserCreateComponent {
     );
 
     console.log(formData);
+  }
+
+  formatarData2(data: any): string {
+    return formatDate(data, 'yyyy-MM-dd', 'en-US');
   }
   formatarData(data: any): string {
     // Converte a data para o formato adequado (exemplo: "AAAA-MM-DD")

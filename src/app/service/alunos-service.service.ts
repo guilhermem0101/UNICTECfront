@@ -15,9 +15,9 @@ export class AlunosServiceService {
     return this.http.get<any[]>(`${this.apiUrl}${'/ler'}`);
   }
 
-  createUser(user: any,d_nasc:string): Observable<any> {
-    const params = new HttpParams().set('d_nasc', d_nasc);
-    return this.http.post<any>(`${this.apiUrl}${'/cadastrar'}`, user, { params });
+  createUser(user: any): Observable<any> {
+    //const params = new HttpParams().set('d_nasc', d_nasc);
+    return this.http.post<any>(`${this.apiUrl}${'/cadastrar'}`, user);
   }
 
   updateUser(user: any): Observable<any> {

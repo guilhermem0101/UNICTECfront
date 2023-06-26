@@ -49,7 +49,7 @@ export class NotasComponent {
       this.listaDisciplinas = disc;
     });
 
-    console.log(this.listaDisciplinas);
+    
   }
 
 

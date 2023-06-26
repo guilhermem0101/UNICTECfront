@@ -59,7 +59,7 @@
 </mat-menu>
 
 
-<button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+<!-- <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
 <mat-menu #animals="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="vertebrates">Lista Cursos</button>
     <button mat-menu-item >Invertebrates</button>
@@ -92,7 +92,7 @@
     <button mat-menu-item>Black Tree Monitor</button>
     <button mat-menu-item>Blue Spiny Lizard</button>
     <button mat-menu-item disabled>Velociraptor</button>
-</mat-menu>
+</mat-menu> -->
 
 <button mat-button [matMenuTriggerFor]="belowMenu">Cursos</button>
 <mat-menu #belowMenu="matMenu" yPosition="below">
@@ -100,20 +100,30 @@
     <button mat-menu-item routerLink="/cursos/grade">Grade Curricular</button>
 </mat-menu>
 
-<button mat-button [matMenuTriggerFor]="beforeMenu">Notas e Médias</button>
-<mat-menu #beforeMenu="matMenu" xPosition="before">
+
+<!-- <mat-menu>
+    <button mat-button [matMenuTriggerFor]="beforeMenu">Notas e Médias</button>
+</mat-menu> -->
+
+<button mat-button [matMenuTriggerFor]="animals">Notas</button>
+<mat-menu #animals="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="cursos"> Cursos</button>
+    
+</mat-menu>
+
+<mat-menu #cursos="matMenu" xPosition="before">
     <button mat-menu-item routerLink="/notas/rds">Redes de Computadores e Sistemas Distribuídos</button>
     <button mat-menu-item routerLink="/notas/sec">Segurança Cibernética</button>
     <button mat-menu-item routerLink="/notas/ads">Análise e Desenvolvimento de Sistemas</button>
     <button mat-menu-item routerLink="/notas/mbi">Business Intelligence e Mineração de Dados</button>
-    <button mat-menu-item routerLink="/notas/gdti">Gestão da Tecnologia da Informação</button>   
+    <button mat-menu-item routerLink="/notas/gdti">Gestão da Tecnologia da Informação</button>  
     
 </mat-menu>
 
 
-<button mat-button [matMenuTriggerFor]="afterMenu">After</button>
+<button mat-button [matMenuTriggerFor]="afterMenu">Aulas</button>
 <mat-menu #afterMenu="matMenu" xPosition="after">
-    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item routerLink="/calendario">Calendario de Aulas</button>
     <button mat-menu-item>Item 2</button>
 </mat-menu>
 
@@ -132,25 +142,3 @@
 
 
 
-<!-- <div class="top-menu">
-    <ul class="top-menu-list">
-        <li class="menu-item">
-            <a routerLink="/tabela-precos" routerLinkActive="active">Consultas com Desconto</a>
-        </li>
-        <li class="menu-item">
-            <a routerLink="/calculo-precos" routerLinkActive="active">Cálculo de Planos</a>
-        </li>
-        <li class="menu-item">
-            <a routerLink="/add-contato" routerLinkActive="active">Adicionar contatos</a>
-        </li>
-        <li class="menu-item">
-            <a routerLink="/grade" routerLinkActive="active">grade</a>
-        </li>
-        <li class="menu-item">
-            <a routerLink="/notas" routerLinkActive="active">notas</a>
-        </li>
-        <li class="menu-item">
-            <a  routerLinkActive="active">Sair</a>
-        </li>
-    </ul>
-</div> -->

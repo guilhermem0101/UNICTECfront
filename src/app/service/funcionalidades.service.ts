@@ -26,6 +26,12 @@ export class FuncionalidadesService {
     return this.http.get<any[]>(`${this.apiUrl}${'/disciplinas'}`, { params });
   }
 
+  getCalendario(cod_curso: string): Observable<any[]> {
+
+    const params = new HttpParams().set('cod_curso', cod_curso);
+    return this.http.get<any[]>(`${this.apiUrl}${'/calendario'}`, { params });
+  }
+
   getNotasByDisciplina(cod_disciplina: string): Observable<any[]>{
     const params = new HttpParams().set('cod_disciplina', cod_disciplina);
     return this.http.get<any[]>(`${this.apiUrl}${'/notas-alunos'}`, { params });

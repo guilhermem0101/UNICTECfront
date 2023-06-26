@@ -30,6 +30,7 @@ import { SecComponent } from './funcionalidades/notas-curso/sec/sec.component';
 import { AdsComponent } from './funcionalidades/notas-curso/ads/ads.component';
 import { MbiComponent } from './funcionalidades/notas-curso/mbi/mbi.component';
 import { GdtiComponent } from './funcionalidades/notas-curso/gdti/gdti.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 
 
@@ -53,7 +54,8 @@ import { GdtiComponent } from './funcionalidades/notas-curso/gdti/gdti.component
     SecComponent,
     AdsComponent,
     MbiComponent,
-    GdtiComponent
+    GdtiComponent,
+    CalendarioComponent
   ],
   imports: [
     BrowserModule,
